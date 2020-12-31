@@ -9,7 +9,7 @@ const loading = document.getElementById("loading");
 //2020
 const currentYear = new Date().getFullYear();
 //countdown time with string template
-const newYearTime = new Date(`December 26 2020 19:37:00`);
+const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
 let audio = new Audio("./audio/audio.mp3");
 
 //display this year in DOM
@@ -20,7 +20,7 @@ function updateCountDown() {
 
   // console.log(currentTime)
   const diff = (newYearTime - currentTime) / 1000;
-
+  console.log(Math.floor(diff))
   if (Math.floor(diff) <= 0) {
     check++;
     if (check <= 1) {
